@@ -12,3 +12,6 @@ class Project(models.Model):
 
 class ReportCard(models.Model):
     language = models.ForeignKey(Project, on_delete=models.CASCADE)
+
+class LoadFile(models.Model):
+    docfile = models.FileField(upload_to='file_load/%Y/%m/%d')

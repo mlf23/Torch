@@ -21,5 +21,9 @@ urlpatterns = [
     url(r'^projects/', include('Torch.urls')),
     url(r'^index/', 'Torch.views.index'),
     url(r'^report_card/', 'Torch.views.report'),
+    url(r'^file_load/', 'Torch.views.list'),
+
+    url(r'file_load/$', 'Torch.views.list', name = 'list'),
+
 ]
 
