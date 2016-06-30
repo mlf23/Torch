@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c3a375d-2410-4f99-80a7-4eb0d3742e12" name="Default" comment="">
+<<<<<<< HEAD
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+=======
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Torch/templates/torch/index.html" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Torch/templates/torch/projects.html" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Torch/templates/torch/report_card.html" />
@@ -12,6 +15,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Torch/models.py" afterPath="$PROJECT_DIR$/Torch/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Torch/views.py" afterPath="$PROJECT_DIR$/Torch/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/untitled5/settings.py" afterPath="$PROJECT_DIR$/untitled5/settings.py" />
+>>>>>>> 444f05793faa469495712f4acd9ab9937855d190
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/untitled5/urls.py" afterPath="$PROJECT_DIR$/untitled5/urls.py" />
     </list>
     <ignored path="untitled5.iws" />
@@ -139,8 +143,13 @@
       <file leaf-file-name="apps.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Torch/apps.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="60">
+              <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+=======
             <state relative-caret-position="57">
               <caret line="3" column="17" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="17" />
+>>>>>>> 444f05793faa469495712f4acd9ab9937855d190
               <folding />
             </state>
           </provider>
@@ -295,6 +304,16 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -305,7 +324,10 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+<<<<<<< HEAD
+=======
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+>>>>>>> 444f05793faa469495712f4acd9ab9937855d190
   </component>
   <component name="RunManager" selected="Django server.untitled5">
     <configuration default="false" name="Test: db.sqlite3" type="DjangoTestsConfigurationType" factoryName="Django tests" temporary="true">
@@ -627,10 +649,17 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
+    <frame x="10" y="43" width="1260" height="733" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
     <frame x="1" y="23" width="1280" height="712" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20355412" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> 444f05793faa469495712f4acd9ab9937855d190
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32741934" sideWeight="0.503231" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -736,6 +765,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/untitled5/urls.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="60">
+          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+=======
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
@@ -893,6 +926,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
           <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+>>>>>>> 444f05793faa469495712f4acd9ab9937855d190
           <folding />
         </state>
       </provider>
