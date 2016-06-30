@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg .tg-yw4l{vertical-align:top}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Projects</title>
+</head>
+<body>
+
+<table class="tg">
+  <tr>
+    <th class="tg-yw4l">Language</th>
+    <th class="tg-yw4l">Project</th>
+    <th class="tg-yw4l">Analysis Count</th>
+    <th class="tg-yw4l">New Issues</th>
+    <th class="tg-yw4l">Total Issues</th>
+    <th class="tg-yw4l">Analysis Time</th>
+    <th class="tg-yw4l">Analysis Ended Time</th>
+    <th class="tg-yw4l">Source Files</th>
+    <th class="tg-yw4l">Visualization</th>
+  </tr>
+
+    {% if all_projects %}
+    {% for projects in all_projects %}
+  <tr>
+    <td class="tg-yw4l">  {{ projects.language }} </td>
+    <td class="tg-yw4l"> <a href = "/projects/{{ projects.id}}/"> {{ projects.projects }} </a> </td>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l"></td>
+  </tr>
+    {% endfor %}
+
+</table>
+
+
+
+{% else %}
+        <h3>You don't have any project uploaded yet!</h3>
+{% endif %}
+</body>
+</html>
