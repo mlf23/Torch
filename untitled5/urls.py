@@ -17,13 +17,9 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
-
     url(r'^admin/', admin.site.urls),
-<<<<<<< HEAD
-]
-=======
     url(r'^projects/', include('Torch.urls')),
     url(r'^index/', 'Torch.views.index'),
     url(r'^report_card/', 'Torch.views.report'),
 ]
->>>>>>> 444f05793faa469495712f4acd9ab9937855d190
+
