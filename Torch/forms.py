@@ -1,8 +1,7 @@
 from django import forms
+from Torch.models import *
 
-
-class FileForm(forms.Form):
-    docfile = forms.FileField(
-        label='Select a file'
-    )
-
+class UploadFileForm(forms.Form):
+     Lddfile = forms.FileField(
+         label='Select a file'
+     )

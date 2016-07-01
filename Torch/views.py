@@ -8,8 +8,10 @@ from django.template import loader
 from django.http import HttpResponse
 from .models import Project
 
-from .models import LoadFile
-from .forms import FileForm
+from .models import Upload
+from .forms import UploadFileForm
+
+
 
 # Create your views here.
 def projects(request):
@@ -30,27 +32,28 @@ def index(request):
 def report(request):
     return render(request, 'torch/report_card.html')
 
-
-#project list
-def list(request):
+def fileup(request):
     # Handle file upload
     if request.method == 'POST':
-        form = FileForm(request.POST, request.FILES)
+        form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
-            newdoc = LoadFile(docfile=request.FILES['docfile'])
+            newdoc = Upload(Lddfile=request.FILES['Lddfile'])
             newdoc.save()
 
             # Redirect to the document list after POST
-            return HttpResponseRedirect(reverse("Torch.views.list"))
+            return HttpResponseRedirect(reverse("Torch.views.fileup"))
     else:
-        form = FileForm()  # A empty, unbound form
+        form = UploadFileForm()  # A empty, unbound form
 
     # Load documents for the list page
-    files = LoadFile.objects.all()
+    files = Upload.objects.all()
 
     # Render list page with the documents and the form
     return render_to_response(
-        'torch/file_load.html',
-        {'documents': files, 'form': form},
+        'torch/index.html',
+        {'files': files, 'form': form},
         context_instance=RequestContext(request)
     )
+
+
+
