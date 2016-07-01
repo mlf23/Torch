@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1> Select a User! </h1>
+<ul>
+    {% for modelname in object_list %}
+    {% with "projects:"|add:modelname|lower|add:"_list" as urlvar %}
+    <li><a href="{% url urlvar %}">{{ modelname }}</a></li>
+    {% endwith %}
+    {% endfor %}
+</ul>
+
+{% endblock%}
