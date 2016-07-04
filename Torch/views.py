@@ -10,6 +10,7 @@ from .models import Project
 
 from .models import Upload
 from .forms import UploadFileForm
+import io
 
 
 
@@ -55,3 +56,5 @@ def fileup(request):
         context_instance=RequestContext(request)
     )
 
+def sign_up(request):
+    return render(request, 'torch/sign_up.html')

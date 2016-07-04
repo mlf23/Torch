@@ -27,5 +27,5 @@ urlpatterns = [
     url(r'^main/', include('projects.urls')),
     url(r'^', include('projects.urls')),
     url(r'^main/', include('projects.urls', namespace="projects")),
-    #url(r'^/sign_up/', 'Torch.views.sign_up'),
+    url(r'^sign_up/', 'Torch.views.sign_up'),
 ]
