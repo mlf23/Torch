@@ -30,3 +30,12 @@ class UserDetail(DetailView):
         project_list = Project.objects.filter(user_id = self.kwargs['pk']).order_by('-pub_date')
         context = {'project_list': project_list, 'object': self.object}
         return context
+
+class ProjectDetail(DetailView):
+    model = Project
+
+    def get_context_data(self, **kwargs):
+        self.object = self.get_object()
+        code_list = Code.objects.filter(project_id = self.kwargs['pk'])
+        context = {'code_list': code_list, 'object': self.object}
+        return context

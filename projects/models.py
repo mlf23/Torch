@@ -13,7 +13,7 @@ class User(models.Model):
 
 class Project(models.Model):
     title = models.CharField(max_length=100)
-    owner = models.CharField(max_length=50)
+    owner = models.CharField(max_length=50) # not necessary
     pub_date = models.DateField()
     language = models.CharField(max_length=50)
     user = models.ForeignKey(User)
