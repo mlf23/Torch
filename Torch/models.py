@@ -18,8 +18,16 @@ class ReportCard(models.Model):
 class LoadFile(models.Model):
     docfile = models.FileField(upload_to='file_load/%Y/%m/%d')
 
+class GitFile(models.Model):
+    giturl = models.URLField(max_length=1000)
+    gitFile = models.FileField(upload_to='Git/%Y/%m/%d')
+    newFile = models.FilePathField(path='Git/%Y/%m/%d', recursive=True)
+
 class Upload(models.Model):
     Lddfile = models.FileField(upload_to='Files/%Y/%m/%d')
 
     def __string__(self):
         return self.Lddfile
+
+
+
