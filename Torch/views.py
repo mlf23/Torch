@@ -72,3 +72,7 @@ def gitLoader(request):
             {'files': files, 'form': form, 'form_git': form_git},
             context_instance=RequestContext(request)
     )
+
+
+def sign_up(request):
+    return render(request, 'torch/sign_up.html')
