@@ -52,16 +52,7 @@ def fileup(request):
     # Load documents for the list page
     files = Upload.objects.all()
 
-<<<<<<< HEAD
     return render_to_response('torch/index.html', {'files': files, 'form': form}, context_instance=RequestContext(request))
-=======
-    # Render list page with the documents and the form
-    return render_to_response(
-        'torch/index.html',
-        {'files': files, 'form': form},
-        context_instance=RequestContext(request)
-    )
 
 def sign_up(request):
     return render(request, 'torch/sign_up.html')
->>>>>>> fe75a9a5c1941c2697b152506e18377dbfde741c
