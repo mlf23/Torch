@@ -7,7 +7,9 @@
 <ul>
         {% for project in project_list %}
         <li>
-        {{ project.title }}
+
+        <a href = "{% url 'projects:project_detail' project.id %}">{{ project.title }}</a> <br>
+             {{ project.pub_date }}, Project type : {{ project.language }}, {{ project.user.name }}
         </li>
         {% endfor %}
 
