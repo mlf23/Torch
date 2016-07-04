@@ -10,14 +10,12 @@ from .models import Project
 
 from .models import LoadFile
 
-from .forms import FileForm
 from .forms import GitFileForm
 import git
 import os
 from datetime import datetime
 from .models import Upload
 from .forms import UploadFileForm
-
 
 
 # Create your views here.
@@ -40,32 +38,22 @@ def report(request):
     return render(request, 'torch/report_card.html')
 
 
+
+
+
 #git file loader
 def gitLoader(request):
-
-    if request.method == 'POST':
+    if request.method == 'GET':
         #form generated
-        form = GitFileForm(request.POST, request.FILES)
-        if form.is_valid():
-            gitUrl = form.cleaned_data['gitFile']
-            dirname = datetime.now().strftime('%Y-%m-%d')
+        form_git = GitFileForm(request.GET, request.FILES)
+        if form_git.is_valid():
+            gitUrl = form_git.cleaned_data['gitFile']
+            dirname = datetime.now().strftime('%Y-%m-%d-%H-%M')
             g = git.Repo.clone_from(gitUrl, dirname)
 
-        # Redirect to the document list after POST
-        return HttpResponseRedirect(reverse("Torch.views.gitLoader"))
+            # Redirect to the document list after POST
+            return HttpResponseRedirect(reverse("Torch.views.gitLoader"))
 
-    else:
-        form = GitFileForm()  # A empty, unbound form
-
-    return render_to_response(
-            'torch/index.html',
-            {'form': form},
-            context_instance=RequestContext(request)
-        )
-
-
-def fileup(request):
-    # Handle file upload
     if request.method == 'POST':
         form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
@@ -73,17 +61,14 @@ def fileup(request):
             newdoc.save()
 
             # Redirect to the document list after POST
-            return HttpResponseRedirect(reverse("Torch.views.fileup"))
+            return HttpResponseRedirect(reverse("Torch.views.gitLoader"))
+
     else:
-        form = UploadFileForm()  # A empty, unbound form
-
-    # Load documents for the list page
-    files = Upload.objects.all()
-
-    # Render list page with the documents and the form
+        form_git = GitFileForm()  # A empty, unbound form
+        form = UploadFileForm()
+        files = Upload.objects.all()
     return render_to_response(
-        'torch/index.html',
-        {'files': files, 'form': form},
-        context_instance=RequestContext(request)
+            'torch/index.html',
+            {'files': files, 'form': form, 'form_git': form_git},
+            context_instance=RequestContext(request)
     )
-
