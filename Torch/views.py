@@ -55,5 +55,3 @@ def fileup(request):
         context_instance=RequestContext(request)
     )
 
-
-
