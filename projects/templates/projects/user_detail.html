@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1> {{ object.name }}`s Project Lists. </h1>
+
+<ul>
+        {% for project in project_list %}
+        <li>
+        {{ project.title }}
+        </li>
+        {% endfor %}
+
+</ul>
+
+{% endblock%}
