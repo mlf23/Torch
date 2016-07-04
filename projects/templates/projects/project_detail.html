@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1> {{ object.title }} </h1>
+
+<ul>
+    {% for code in code_list %}
+    <li>
+        <a href = "#">{{ code.project.title }}</a> <br>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock%}

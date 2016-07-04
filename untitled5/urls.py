@@ -15,13 +15,23 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from Torch import views
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^projects/', include('Torch.urls')),
+
     url(r'^index/$', 'Torch.views.gitLoader', name='gitloader'),
     url(r'^report_card/', 'Torch.views.report'),
 
 
-]
 
+    url(r'^index/', 'Torch.views.fileup'),
+    url(r'^index/$', 'Torch.views.fileup', name='fileup'),
+    url(r'^report_card/', 'Torch.views.report'),
+    url(r'^main/', include('projects.urls')),
+    url(r'^', include('projects.urls')),
+    url(r'^main/', include('projects.urls', namespace="projects")),
+
+]

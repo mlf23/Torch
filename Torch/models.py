@@ -1,6 +1,8 @@
 from django.db import models
 
 # Create your models here.
+#class Index(models.Model):
+ #   filename = models.CharField()
 
 class Project(models.Model):
     language = models.CharField(max_length=250)
@@ -20,3 +22,11 @@ class GitFile(models.Model):
     giturl = models.URLField(max_length=1000)
     gitFile = models.FileField(upload_to='Git/%Y/%m/%d')
     newFile = models.FilePathField(path='Git/%Y/%m/%d', recursive=True)
+
+class Upload(models.Model):
+    Lddfile = models.FileField(upload_to='Files/%Y/%m/%d')
+
+    def __string__(self):
+        return self.Lddfile
+
+

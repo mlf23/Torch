@@ -5,7 +5,7 @@ from . import views
 
 urlpatterns = [
     #/projects/
-    #url(r'^$', views.index, name='index'),
+    url(r'^$', views.index, name='index'),
     url(r'^$', views.projects, name='projects'),
 
     #/projects/123/

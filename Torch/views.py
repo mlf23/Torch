@@ -15,6 +15,10 @@ from .forms import GitFileForm
 import git
 import os
 from datetime import datetime
+from .models import Upload
+from .forms import UploadFileForm
+
+
 
 # Create your views here.
 def projects(request):
@@ -53,11 +57,33 @@ def gitLoader(request):
     else:
         form = GitFileForm()  # A empty, unbound form
 
+    return render_to_response(
+            'torch/index.html',
+            {'form': form},
+            context_instance=RequestContext(request)
+        )
+
+
+def fileup(request):
+    # Handle file upload
+    if request.method == 'POST':
+        form = UploadFileForm(request.POST, request.FILES)
+        if form.is_valid():
+            newdoc = Upload(Lddfile=request.FILES['Lddfile'])
+            newdoc.save()
+
+            # Redirect to the document list after POST
+            return HttpResponseRedirect(reverse("Torch.views.fileup"))
+    else:
+        form = UploadFileForm()  # A empty, unbound form
+
+    # Load documents for the list page
+    files = Upload.objects.all()
 
     # Render list page with the documents and the form
     return render_to_response(
         'torch/index.html',
-        {'form': form},
+        {'files': files, 'form': form},
         context_instance=RequestContext(request)
     )
 
