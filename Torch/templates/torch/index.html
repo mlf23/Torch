@@ -22,7 +22,7 @@
 {% endif %}
 
 <!-- Upload form. Note enctype attribute!-->
-<form action="{% url "fileup" %}" method="post" enctype="multipart/form-data">
+<form action="{% url "gitloader" %}" method="post" enctype="multipart/form-data">
     <div class="form-group" id="two">
         {% csrf_token %}
         <p>
@@ -43,5 +43,27 @@
     </div>
 </form>
 
+
+
+
+    <div>
+
+    <form action="/index/" method="get" enctype="multipart/form-data">
+
+        <input type='hidden' name='csrfmiddlewaretoken' value='xfyofexzNawRuLUzUDJ66DIT76oh5yKA' />
+
+        <p></p>
+
+        <p><label for="id_gitFile">git url:</label> </p>
+
+        <p>
+
+            <input id="id_gitFile" name="gitFile" type="url" />
+        </p>
+
+        <p><input type="submit" value="Git Upload"/></p>
+    </form>
+
+</div>
 
 {%  endblock %}
