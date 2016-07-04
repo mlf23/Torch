@@ -36,8 +36,11 @@ def fileup(request):
     # Handle file upload
     if request.method == 'POST':
         form = UploadFileForm(request.POST, request.FILES)
+
         if form.is_valid():
             newdoc = Upload(Lddfile=request.FILES['Lddfile'])
+            # print(newdoc.Lddfile.get_extension)
+
             newdoc.save()
 
             # Redirect to the document list after POST
@@ -48,10 +51,4 @@ def fileup(request):
     # Load documents for the list page
     files = Upload.objects.all()
 
-    # Render list page with the documents and the form
-    return render_to_response(
-        'torch/index.html',
-        {'files': files, 'form': form},
-        context_instance=RequestContext(request)
-    )
-
+    return render_to_response('torch/index.html', {'files': files, 'form': form}, context_instance=RequestContext(request))
