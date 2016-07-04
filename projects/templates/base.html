@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Torch!</title>
+    {% block title %}<title>Torch!</title> {% endblock %}
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -12,7 +12,12 @@
     .main_container{
         margin:0px 500px 50px 500px;
     }
+                #one { position:absolute; top: 30px; right:80px; }
+        #two { position: absolute; top: 300px; left: 500px; }
     </style>
+
+        <meta charset="UTF-8">
+
 
 </head>
 
@@ -27,11 +32,19 @@
                 <ul class="nav navbar-nav">
                     <li class="active" style="color:white;"><a href="/dashboard/">Dashboard <span class="sr-only">(current)</span></a></li>
                     <li><a href="#" style="color:white;">Settings</a></li>
+                    <li style="width:720px;">empty</li>
+                    <li><a href="#" style="color:white;">
+                        Sign in
+                    </a></li>
+                    <li><a href="/sign_up/" style="color:white;">
+                        Sign up
+                    </a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </ul>
     </div>
 </nav>
+
 
 {% block content %}
 <!-- Here is index.html -->
