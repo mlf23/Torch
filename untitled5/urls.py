@@ -19,11 +19,9 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^projects/', include('Torch.urls')),
-    url(r'^index/', 'Torch.views.index'),
+    url(r'^index/$', 'Torch.views.gitLoader', name='gitloader'),
     url(r'^report_card/', 'Torch.views.report'),
-    url(r'^file_load/', 'Torch.views.list'),
 
-    url(r'file_load/$', 'Torch.views.list', name = 'list'),
 
 ]
 

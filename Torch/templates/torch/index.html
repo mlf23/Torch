@@ -9,5 +9,26 @@
 <h1>
     Torch Index Page will be here!
 </h1>
+
+    <div>
+        <!-- Upload form. Note enctype attribute!-->
+        <form action="{% url "gitloader" %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <p>{{ form.non_field_errors }}</p>
+
+            <p>{{ form.gitFile.label_tag }} {{ form.gitFile.help_text }}</p>
+
+            <p>
+                {{ form.gitFile.errors }}
+                {{ form.gitFile }}
+            </p>
+
+            <p><input type="submit" value="Upload"/></p>
+        </form>
+
+
+    </div>
+
+
 </body>
 </html>

@@ -9,7 +9,12 @@ from django.http import HttpResponse
 from .models import Project
 
 from .models import LoadFile
+
 from .forms import FileForm
+from .forms import GitFileForm
+import git
+import os
+from datetime import datetime
 
 # Create your views here.
 def projects(request):
@@ -31,26 +36,28 @@ def report(request):
     return render(request, 'torch/report_card.html')
 
 
-#project list
-def list(request):
-    # Handle file upload
+#git file loader
+def gitLoader(request):
+
     if request.method == 'POST':
-        form = FileForm(request.POST, request.FILES)
+        #form generated
+        form = GitFileForm(request.POST, request.FILES)
         if form.is_valid():
-            newdoc = LoadFile(docfile=request.FILES['docfile'])
-            newdoc.save()
+            gitUrl = form.cleaned_data['gitFile']
+            dirname = datetime.now().strftime('%Y-%m-%d')
+            g = git.Repo.clone_from(gitUrl, dirname)
 
-            # Redirect to the document list after POST
-            return HttpResponseRedirect(reverse("Torch.views.list"))
+        # Redirect to the document list after POST
+        return HttpResponseRedirect(reverse("Torch.views.gitLoader"))
+
     else:
-        form = FileForm()  # A empty, unbound form
+        form = GitFileForm()  # A empty, unbound form
 
-    # Load documents for the list page
-    files = LoadFile.objects.all()
 
     # Render list page with the documents and the form
     return render_to_response(
-        'torch/file_load.html',
-        {'documents': files, 'form': form},
+        'torch/index.html',
+        {'form': form},
         context_instance=RequestContext(request)
     )
+
