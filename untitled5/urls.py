@@ -24,9 +24,10 @@ urlpatterns = [
     url(r'^index/', 'Torch.views.gitLoader'),
     url(r'^index/$', 'Torch.views.gitLoader', name='gitloader'),
     url(r'^report_card/', 'Torch.views.report'),
-    url(r'^main/', include('projects.urls')),
-    url(r'^', include('projects.urls')),
-    url(r'^main/', include('projects.urls', namespace="projects")),
+    # url(r'^main/', include('projects.urls')),
+    url(r'^', include('projects.urls', namespace="projects")),
+    # url(r'^main/', include('projects.urls', namespace="projects")),
+    url(r'^users/', include('users.urls', namespace="users")),
 
-    url(r'^sign_up/', 'Torch.views.sign_up'),
+    # url(r'^sign_up/', 'users.views.sign_up'),
 ]

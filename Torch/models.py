@@ -8,7 +8,6 @@ class Project(models.Model):
     language = models.CharField(max_length=250)
     projects = models.CharField(max_length=250)
 
-
     def __str__(self):
         return self.language + ' | ' + self.projects
 
@@ -21,7 +20,7 @@ class LoadFile(models.Model):
 class GitFile(models.Model):
     giturl = models.URLField(max_length=1000)
     gitFile = models.FileField(upload_to='Git/%Y/%m/%d')
-    newFile = models.FilePathField(path='Git/%Y/%m/%d', recursive=True)
+    newFile = models.FilePathField(path='Git/%Y/%m/%d', recursive=True, )#default="null")
 
 class Upload(models.Model):
     Lddfile = models.FileField(upload_to='Files/%Y/%m/%d')
