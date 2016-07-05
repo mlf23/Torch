@@ -7,7 +7,6 @@
 
 {#  <div class="form-group" id="two">#} {#    <input class="form-control input-lg" type="text" placeholder=".input-lg">#} {#      <input type="file" id="exampleInputFile">#} {#      <br>#} {#  <input class="form-control input-lg" type="text" placeholder="input">#} {#    <input class="btn btn-default" type="button" value="Load From Git">#} {#  </div>#} </form>
 <!-- List of uploaded documents -->
-
 {% if files %}
     <ul>
         {% for file in files %}
@@ -67,5 +66,9 @@
     </form>
 
 </div>
+    {% load staticfiles %}
+    <div>
+        <img src = "{% static "torch.png" %}" alt ="main torch image">
+    </div>
 
 {%  endblock %}
