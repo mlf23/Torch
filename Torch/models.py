@@ -7,8 +7,7 @@ from django.db import models
 class Project(models.Model):
     language = models.CharField(max_length=250)
     projects = models.CharField(max_length=250)
-
-
+    
     def __str__(self):
         return self.language + ' | ' + self.projects
 
@@ -28,6 +27,3 @@ class Upload(models.Model):
 
     def __string__(self):
         return self.Lddfile
-
-
-

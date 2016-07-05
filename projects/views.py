@@ -3,6 +3,7 @@ from django.views.generic.base import TemplateView
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from projects.models import User, Project, Code
+
 # Create your views here.
 
 class ProjectsModelView(TemplateView):
