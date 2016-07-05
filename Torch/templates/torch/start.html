@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>CSS Tutorial | Layout</title>
+    <style>
+      #jb-container {
+        width: 1200px;
+        margin: 0px auto;
+        padding: 20px;
+        border: 0px solid #bcbcbc;
+      }
+      #jb-header {
+        padding: 20px;
+        margin-bottom: 20px;
+        border: 0px solid #bcbcbc;
+      }
+      #jb-content {
+        width: 580px;
+        padding: 20px;
+        margin-bottom: 20px;
+        float: left;
+        border: 0px solid #bcbcbc;
+      }
+      #jb-sidebar {
+        width: 530px;
+        padding: 20px;
+        margin-bottom: 20px;
+        float: right;
+        border: 0px solid #bcbcbc;
+      }
+      #jb-footer {
+        clear: both;
+        padding: 20px;
+        border: 0px solid #bcbcbc;
+      }
+    </style>
+
+          <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/static/css/nav_start.css">
+  </head>
+  <body>
+
+  <div id="nav_start" class="navbar navbar-default navbar-fixed-top" role="navigation" style=height:80px>
+      <p></p>
+    <div class="container">
+        <div class="navbar-header"><a class="navbar-brand" href="/index/">TORCH</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-menubuilder">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="127.0.0.1:8000/login">Login</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div id="jb-container">
+      <div id="jb-header">
+        <h1>POWER TORCH</h1>
+      </div>
+      <div id="jb-content">
+        <h2><div class="jumbotron">
+  <h1>Da Torch!</h1>
+  <p>...</p>
+  <p><a class="btn btn-primary btn-lg" href="#" role="button">BURN!</a></p>
+</div></h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis nulla. Phasellus lacinia tempus mauris eu laoreet. Proin gravida velit dictum dui consequat malesuada. Aenean et nibh eu purus scelerisque aliquet nec non justo. Aliquam vitae aliquet ipsum. Etiam condimentum varius purus ut ultricies. Mauris id odio pretium, sollicitudin sapien eget, adipiscing risus.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis nulla. Phasellus lacinia tempus mauris eu laoreet. Proin gravida velit dictum dui consequat malesuada. Aenean et nibh eu purus scelerisque aliquet nec non justo. Aliquam vitae aliquet ipsum. Etiam condimentum varius purus ut ultricies. Mauris id odio pretium, sollicitudin sapien eget, adipiscing risus.</p>
+      </div>
+      <div id="jb-sidebar">
+
+        {% block content %}
+
+
+        <div class="page-header">
+          <h1>회원가입 <small>basic form</small></h1>
+        </div>
+        <div class="col-md-10">
+          <form role="form">
+            <div class="form-group">
+              <label for="InputEmail">이메일 주소</label>
+              <input type="email" class="form-control" id="InputEmail" placeholder="이메일 주소">
+            </div>
+            <div class="form-group">
+              <label for="InputPassword1">비밀번호</label>
+              <input type="password" class="form-control" id="InputPassword1" placeholder="비밀번호">
+            </div>
+            <div class="form-group">
+              <label for="InputPassword2">비밀번호 확인</label>
+              <input type="password" class="form-control" id="InputPassword2" placeholder="비밀번호 확인">
+              <p class="help-block">비밀번호 확인을 위해 다시한번 입력 해 주세요</p>
+            </div>
+            <div class="form-group">
+              <label for="username">이름</label>
+              <input type="text" class="form-control" id="username" placeholder="이름을 입력해 주세요">
+            </div>
+              <div class="form-group">
+              <label for="username">계정 유형</label>
+                  <select class = "form-control">
+                      <option>User</option>
+                      <option>Supervisor</option>
+                  </select>
+              </div>
+            <p></p>
+            <div class="form-group">
+                <label>약관 동의</label>
+              <div data-toggle="buttons">
+              <label>
+                  <span class="fa fa-check"></span>
+                  <input id="agree" type="checkbox" autocomplete="off" checked>
+              </label>
+              <a href="#">이용약관</a>에 동의합니다.
+              </div>
+            </div>
+            <div class="form-group text-center">
+              <button type="submit" class="btn btn-info">회원가입<i class="fa fa-check spaceLeft"></i></button>
+              <button type="submit" class="btn btn-warning">가입취소<i class="fa fa-times spaceLeft"></i></button>
+            </div>
+          </form>
+        </div>
+
+{% endblock %}
+
+      </div>
+      <div id="jb-footer">
+        <p>Copyright</p>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+
+
