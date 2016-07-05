@@ -18,7 +18,7 @@ class Project(models.Model):
 class Code(models.Model):
     # for One to Many relationship
     project = models.ForeignKey(Project)
-
+    
     def __str__(self):
         return self.project
 

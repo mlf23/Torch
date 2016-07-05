@@ -11,7 +11,7 @@
     .main_container{
         margin:0px 500px 50px 500px;
     }
-                #one { position:absolute; top: 30px; right:80px; }
+        #one { position:absolute; top: 30px; right:80px; }
         #two { position: absolute; top: 300px; left: 500px; }
     </style>
         <meta charset="UTF-8">
@@ -28,14 +28,14 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li style="color:white;"> {% if request.get_full_path == main %} Find it!!! {% endif %}</li>
-                    <li class="active" style="color:white;"><a href="/dashboard/">Dashboard <span class="sr-only">(current)</span></a></li>
-                    <li class="active"><a href="#" style="color:white;">Settings</a></li>
+
+                    <li class="{% if request.path == '/main/' %}active{% endif %}" ><a href="/main/" style="color:white;">Main <span class="sr-only">(current)</span></a></li>
+                    <li class="{% if request.path == '/settings/' %}active{% endif %}"><a href="#" style="color:white;">Settings</a></li>
                     <li class="acitve" style="width:720px;">empty</li>
-                    <li class="acitve"><a href="#" style="color:white;">
+                    <li class="{% if request.path == '/signin/' %}active{% endif %}"><a href="#" style="color:white;">
                         Sign in
                     </a></li>
-                    <li class="active"><a href="/users/sign_up/" style="color:white;">
+                    <li class="{% if request.path == '/sign_up/' %}active{% endif %}"><a href="/sign_up/" style="color:white;">
                         Sign up
                     </a></li>
                 </ul>
@@ -43,7 +43,6 @@
         </ul>
     </div>
 </nav>
-
 
 {% block content %}
 <!-- Here is index.html -->
