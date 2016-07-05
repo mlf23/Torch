@@ -2,17 +2,39 @@
 
 {% block content %}
 
-<h1> {{ object.name }}`s Project Lists. </h1>
+<div class="container" style="border: solid 2px; border-radius:5px; width:60%;">
 
-<ul>
-        {% for project in project_list %}
-        <li>
+    <div class="col-md-4">
+        Project title
+    </div>
+    <div class="col-md-4">
+        Type
+    </div>
+    <div class="col-md-2">
+        Owner
+    </div>
+    <div class="col-md-2">
+        Create date
+    </div>
+    <hr style="margin-bottom:10px; ">
 
-        <a href = "{% url 'projects:project_detail' project.id %}">{{ project.title }}</a> <br>
-             {{ project.pub_date }}, Project type : {{ project.language }}, {{ project.user.name }}
-        </li>
-        {% endfor %}
+    {% for project in project_list %}
 
-</ul>
+    <div class="col-md-4">
+        <a href = "{% url 'projects:project_detail' project.id %}">{{ project.title }}</a>
+    </div>
+    <div class="col-md-4">
+        {{ project.language }}
+    </div>
+    <div class="col-md-2">
+        {{ project.user.name }}
+    </div>
+    <div class="col-md-2">
+        {{ project.pub_date }}
+    </div>
+
+    {% endfor %}
+
+</div>
 
 {% endblock%}
