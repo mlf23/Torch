@@ -8,14 +8,6 @@
 {#  <div class="form-group" id="two">#} {#    <input class="form-control input-lg" type="text" placeholder=".input-lg">#} {#      <input type="file" id="exampleInputFile">#} {#      <br>#} {#  <input class="form-control input-lg" type="text" placeholder="input">#} {#    <input class="btn btn-default" type="button" value="Load From Git">#} {#  </div>#} </form>
 <!-- List of uploaded documents -->
 
-    <ul class="nav navbar-nav">
-        <li><a href="/dashboard/">Dashboard <span class="sr-only">(current)</span></a></li>
-        <li><a href="#" style="color:white;">Settings</a></li>
-        <li><a href="/report_card" style="color:white;">Report Card <span class="sr-only">(current)</span></a></li>
-        <li style="width:600px;">empty</li>
-        <li><a href="#" style="color:white;">Sign in</a></li>
-        <li><a href="/sign_up/" style="color:white;">Sign up</a></li>
-    </ul>
 {% if files %}
     <ul>
         {% for file in files %}
@@ -23,6 +15,7 @@
             <li> {{ file.Lddfile.read }} </li>
             <li> {{ file.Lddfile.get_extension }} </li>
             <br>
+
 
         {% endfor %}
     </ul>

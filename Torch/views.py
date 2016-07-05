@@ -37,10 +37,6 @@ def index(request):
 def report(request):
     return render(request, 'torch/report_card.html')
 
-
-
-
-
 #git file loader
 def gitLoader(request):
     if request.method == 'GET':

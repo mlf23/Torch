@@ -8,7 +8,7 @@ class User(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
 
-    def __string__(self):
+    def __str__(self):
         return self.name
 
 class Project(models.Model):
@@ -18,12 +18,12 @@ class Project(models.Model):
     language = models.CharField(max_length=50)
     user = models.ForeignKey(User)
 
-    def __string__(self):
+    def __str__(self):
         return self.title
 
 class Code(models.Model):
     # for One to Many relationship
     project = models.ForeignKey(Project)
 
-    def __string__(self):
+    def __str__(self):
         return self.project
