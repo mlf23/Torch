@@ -4,6 +4,7 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/static/css/nav_start.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <!-- Bootstrap end -->
 
@@ -15,37 +16,34 @@
         #two { position: absolute; top: 300px; left: 500px; }
     </style>
         <meta charset="UTF-8">
-
-
 </head>
 
-<body style="padding-top: 100px;">
-    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" style="background-color:black;">
-        <div class="container" style="margin-left:30px; margin-right:30px;">
-            <div class="navbar-header" style="padding-right:30px;">
-
-                <a href="/dashboard/" class="navbar-brand" style="color:white;">Torch</a>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-
-
-                    <!-- <li class="{% if action == 'main' %}active{% endif %}"style="color:white;"></li> -->
-
-                    <li class="{% if request.path == 'projects/main/' %}active{% endif %}" ><a href="/projects/main/" style="color:white;">Main <span class="sr-only">(current)</span></a></li>
-                    <li class="{% if request.path == '/settings/' %}active{% endif %}"><a href="#" style="color:white;">Settings</a></li>
-                    <li class="acitve" style="width:720px;">empty</li>
-                    <li class="{% if request.path == '/signin/' %}active{% endif %}"><a href="#" style="color:white;">
-                        Sign in
-                    </a></li>
-                    <li class="{% if request.path == '/sign_up/' %}active{% endif %}"><a href="/sign_up/" style="color:white;">
-                        Sign up
-                    </a></li>
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </ul>
+<body style="padding-top: 100px">
+<div id="nav_start" class="navbar navbar-default navbar-fixed-top" role="navigation" style=height:80px>
+    <div class="container">
+        <div class="navbar-header" style="padding-top:15px"><a class="navbar-brand" href="/index/" style="font-size:45px">TORCH</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+            </button>
+        </div>
+            <ul class ="nav navbar-nav navbar-left" style="padding-top:18px;padding-right:30px">
+            </ul>
+            <ul class ="nav navbar-nav navbar-left" style="padding-top:18px;padding-right:5px">
+                <a href="/sign_up" class="btn btn-link btn-lg {% if request.path == '/sign_up' %}active{% endif %}">Projects</a>
+            </ul>
+            <ul class ="nav navbar-nav navbar-left" style="padding-top:18px;padding-right:5px">
+                <a href="/report_card" class="btn btn-link btn-lg {% if request.path == '/report_card/' %}active{% endif %}">Report card</a>
+            </ul>
+            <ul class ="nav navbar-nav navbar-right" style="padding-top:18px;padding-right:5px">
+                <a href="/start" class="btn btn-link btn-lg">Logout</a>
+            </ul>
+            <ul class ="nav navbar-nav navbar-right" style="padding-top:18px;padding-right:5px">
+                <a href="/settings" class="btn btn-link btn-lg {% if request.path == '/settings' %}active{% endif %}">Account Settings</a>
+            </ul>
+            <ul class ="nav navbar-nav navbar-right" style="padding-top:18px;padding-right:5px">
+                <a href="/Projects/main" class="btn btn-link btn-lg {% if request.path == '/Projects/main/' %}active{% endif %}" disabled="disabled">Login ID</a>
+            </ul>
     </div>
-</nav>
+</div>
 
 {% block content %}
 <!-- Here is index.html -->
