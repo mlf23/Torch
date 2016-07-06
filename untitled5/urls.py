@@ -20,13 +20,7 @@ from Torch import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^projects/', include('Torch.urls')),
-    url(r'^index/', 'Torch.views.gitLoader'),
-    url(r'^index/$', 'Torch.views.gitLoader', name='gitloader'),
-    url(r'^report_card/', 'Torch.views.report'),
-    url(r'^main/', include('projects.urls')),
-    url(r'^', include('projects.urls')),
-    url(r'^main/', include('projects.urls', namespace="projects")),
-    url(r'^start/', 'Torch.views.start'),
-    url(r'^sign_up/', 'Torch.views.sign_up'),
+    url(r'^', include('Torch.urls')),
+    url(r'^projects/', include('projects.urls', namespace="projects")),
+    url(r'^Torch', include('Torch.urls')),
 ]

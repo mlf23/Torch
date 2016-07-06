@@ -19,14 +19,14 @@ from .forms import UploadFileForm
 
 
 # Create your views here.
-def projects(request):
-    all_projects = Project.objects.all()
-    template = loader.get_template('torch/projects.html')
-    context = {
-        'all_projects': all_projects,
-
-    }
-    return render(request, 'torch/projects.html', context)
+# def projects(request):
+#     all_projects = Project.objects.all()
+#     template = loader.get_template('torch/projects.html')
+#     context = {
+#         'all_projects': all_projects,
+#
+#     }
+#     return render(request, 'torch/projects.html', context)
 
 def detail(request, user_id):
     return HttpResponse("<h2>Details for projects user: " +str(user_id) +"</h2>")
