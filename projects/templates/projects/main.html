@@ -3,7 +3,6 @@
 {% block content %}
 
 <ul>
-    123
     {% for modelname in object_list %}
     {% with "projects:"|add:modelname|lower|add:"_list" as urlvar %}
     <li><a href="{% url urlvar %}">Login 하기!</a></li>
