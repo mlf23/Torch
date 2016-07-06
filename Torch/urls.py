@@ -10,9 +10,10 @@ urlpatterns = [
     url(r'^start/$', views.start),
     url(r'^sign_up/$', views.sign_up),
 
-
     # url(r'^$', views.projects, name='projects'),
     #/projects/123/
     # url(r'^(?P<user_id>[0-9]+)/$', views.detail, name = 'detail'),
-
 ]
+
+
+
