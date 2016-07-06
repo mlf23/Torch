@@ -21,6 +21,6 @@ from Torch import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('Torch.urls')),
-    url(r'^projects/', include('projects.urls', namespace="projects")),
-    url(r'^Torch', include('Torch.urls')),
+    url(r'^projects/', include('projects.urls')),
+    url(r'^Torch/', include('Torch.urls')),
 ]
