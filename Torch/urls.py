@@ -4,7 +4,7 @@ from . import views
 
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
+    url(r'^$', views.start, name='index'),
     url(r'^index/$', views.gitLoader, name='gitloader'),
     url(r'^report_card/$', views.report, name='report'),
     url(r'^start/$', views.start),
