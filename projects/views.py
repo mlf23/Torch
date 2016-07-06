@@ -40,3 +40,8 @@ class ProjectDetail(DetailView):
         code_list = Code.objects.filter(project_id = self.kwargs['pk'])
         context = {'code_list': code_list, 'object': self.object}
         return context
+
+def printAddProject(request):
+    return render(request, 'projects/addproject.html')
+
+# def addProject(request, user_id):
