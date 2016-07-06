@@ -32,7 +32,7 @@
 
                     <!-- <li class="{% if action == 'main' %}active{% endif %}"style="color:white;"></li> -->
 
-                    <li class="{% if request.path == '/main/' %}active{% endif %}" ><a href="/main/" style="color:white;">Main <span class="sr-only">(current)</span></a></li>
+                    <li class="{% if request.path == 'projects/main/' %}active{% endif %}" ><a href="/projects/main/" style="color:white;">Main <span class="sr-only">(current)</span></a></li>
                     <li class="{% if request.path == '/settings/' %}active{% endif %}"><a href="#" style="color:white;">Settings</a></li>
                     <li class="acitve" style="width:720px;">empty</li>
                     <li class="{% if request.path == '/signin/' %}active{% endif %}"><a href="#" style="color:white;">
