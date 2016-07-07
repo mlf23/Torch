@@ -7,6 +7,7 @@ from django.core.urlresolvers import reverse
 from django.template import loader
 from django.http import HttpResponse
 from .models import Project
+from users.models import User
 
 from .models import LoadFile
 
