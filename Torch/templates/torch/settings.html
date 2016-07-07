@@ -34,8 +34,10 @@
               </div>
             <p></p>
             <div class="form-group text-center">
-              <button type="submit" class="btn btn-info">수정하<i class="fa fa-check spaceLeft"></i></button>
-              <button type="submit" class="btn btn-warning">돌아가기<i class="fa fa-times spaceLeft"></i></button>
+                  <a href="{{ request.META.HTTP_REFERER }}" role="button" class="btn btn-info">수정하기<i class="fa fa-times spaceLeft"></i>
+              </a>
+                  <a href="{{ request.META.HTTP_REFERER }}" role="button" class="btn btn-warning">돌아가기<i class="fa fa-times spaceLeft"></i>
+              </a>
             </div>
           </form>
         </div>

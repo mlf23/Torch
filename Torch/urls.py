@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^sign_up/$', views.sign_up),
     url(r'^settings/$', views.settings),
 
+
     # url(r'^$', views.projects, name='projects'),
     #/projects/123/
     # url(r'^(?P<user_id>[0-9]+)/$', views.detail, name = 'detail'),

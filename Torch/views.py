@@ -69,7 +69,6 @@ def gitLoader(request):
             context_instance=RequestContext(request)
     )
 
-
 def sign_up(request):
     return render(request, 'torch/sign_up.html')
 
@@ -78,3 +77,4 @@ def start(request):
 
 def settings(request):
     return render(request, 'torch/settings.html')
+
