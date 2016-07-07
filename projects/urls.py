@@ -5,7 +5,7 @@ from projects import views
 urlpatterns = [
     # default
     # url(r'^$', views.main, name='main'),
-    url(r'^$', views.ProjectsModelView.as_view(), name='main'),
+    url(r'^$', views.ProjectsModelView.as_view(), name='projects'),
 
     url(r'^project/$', views.ProjectList.as_view(), name='project_list'),
 
