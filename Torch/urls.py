@@ -9,7 +9,6 @@ urlpatterns = [
     url(r'^report_card/$', views.report, name='report'),
     url(r'^start/$', views.start),
     url(r'^start/index/$', views.index),
-    url(r'^sign_up/$', views.sign_up),
     url(r'^settings/$', views.settings),
 
 
