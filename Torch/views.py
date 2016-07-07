@@ -85,11 +85,13 @@ def start(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
-            user = User.objects.create_user(
-                username=form.cleaned_data['username'],
-                password=form.cleaned_data['password1'],
-                email=form.cleaned_data['email']
-            )
+            # user = User.objects.create_user(
+            #     username=form.cleaned_data['username'],
+            #     password=form.cleaned_data['password1'],
+            #     email=form.cleaned_data['email']
+            # )
+            user = User(username=form.cleaned_data['username'], password=form.cleaned_data['password1'], email=form.cleaned_data['email'])
+            user.save()
             return HttpResponseRedirect('/users/success/')
     else:
         form = RegistrationForm()
@@ -104,4 +106,3 @@ def start(request):
 
 def settings(request):
     return render(request, 'torch/settings.html')
-
