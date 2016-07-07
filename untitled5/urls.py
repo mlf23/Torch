@@ -23,4 +23,6 @@ urlpatterns = [
     url(r'^', include('Torch.urls')),
     url(r'^projects/', include('projects.urls', namespace='projects')),
     url(r'^Torch/', include('Torch.urls', namespace='Torch')),
+    url(r'^start/', 'Torch.views.start'),
+    url(r'^users/', include('users.urls', namespace="users")),
 ]
