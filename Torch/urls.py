@@ -2,7 +2,7 @@ from django.conf.urls import patterns, url
 
 from . import views
 
-
+app_name = 'Torch'
 urlpatterns = [
     url(r'^$', views.start, name='start'),
     url(r'^index/$', views.gitLoader, name='gitloader'),
