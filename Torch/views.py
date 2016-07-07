@@ -18,6 +18,7 @@ from datetime import datetime
 from .models import Upload
 from .forms import UploadFileForm
 from users.forms import RegistrationForm
+from users.models import User
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
@@ -77,7 +78,10 @@ def gitLoader(request):
             context_instance=RequestContext(request)
     )
 
-@csrf_protect
+
+def sign_up(request):
+    return render(request, 'torch/sign_up.html')
+
 def start(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
@@ -101,3 +105,4 @@ def start(request):
 
 def settings(request):
     return render(request, 'torch/settings.html')
+

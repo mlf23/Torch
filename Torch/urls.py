@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^start/index/$', views.index),
     url(r'^settings/$', views.settings),
 
+
     # url(r'^$', views.projects, name='projects'),
     #/projects/123/
     # url(r'^(?P<user_id>[0-9]+)/$', views.detail, name = 'detail'),
