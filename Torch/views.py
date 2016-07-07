@@ -75,3 +75,6 @@ def sign_up(request):
 
 def start(request):
     return render(request, 'torch/start.html')
+
+def settings(request):
+    return render(request, 'torch/settings.html')
