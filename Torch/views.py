@@ -96,8 +96,21 @@ def start(request):
             return HttpResponseRedirect('/users/success/')
     else:
         form = RegistrationForm()
+
+    # 로그인 세션 확인
+    # 아이디와 비밀번호 비교해서 로그인 성공 시 'login_info' 세션 생성해서 아이디 저장
+    # request.session['login_info'] = "~~~id" 하고 is_login = TRUE 로 변경
+    if request.session.get('login_info', False):
+        is_login = True
+
+    else:
+        is_login = False
+
+    print(is_login)
+
     variables = RequestContext(request, {
-        'form': form
+        'form': form,
+        'is_login': is_login,
     })
 
     return render_to_response(

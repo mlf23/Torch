@@ -50,6 +50,7 @@
                 </button>
             </div>
             <div class="collapse navbar-collapse navbar-menubuilder">
+                {% if is_login == False %}
                 <ul class ="nav navbar-nav navbar-right" style="padding-top:40px;padding-right:40px">
                     <a href="/index" class="btn btn-primary btn-sm">Login</a>
                 </ul>
@@ -65,6 +66,9 @@
                         <input type="email" class="form-control" id="InputEmail" placeholder="이메일 주소">
                     </div>
                 </ul>
+                {% else %}
+                {{ request.session[login_info] }}
+                {% endif %}
             </div>
         </div>
     </div>
