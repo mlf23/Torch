@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Torch',
     'projects',
+    'users',
 ]
 
 MIDDLEWARE_CLASSES = [

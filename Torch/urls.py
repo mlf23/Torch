@@ -2,13 +2,15 @@ from django.conf.urls import patterns, url
 
 from . import views
 
-
+app_name = 'Torch'
 urlpatterns = [
     url(r'^$', views.start, name='start'),
     url(r'^index/$', views.gitLoader, name='gitloader'),
     url(r'^report_card/$', views.report, name='report'),
     url(r'^start/$', views.start),
-    url(r'^sign_up/$', views.sign_up),
+    url(r'^start/index/$', views.index),
+    url(r'^settings/$', views.settings),
+
 
     # url(r'^$', views.projects, name='projects'),
     #/projects/123/

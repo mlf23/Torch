@@ -7,6 +7,7 @@ from django.core.urlresolvers import reverse
 from django.template import loader
 from django.http import HttpResponse
 from .models import Project
+from users.models import User
 
 from .models import LoadFile
 
@@ -16,7 +17,15 @@ import os
 from datetime import datetime
 from .models import Upload
 from .forms import UploadFileForm
+from users.forms import RegistrationForm
+from users.models import User
 
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
+from django.views.decorators.csrf import csrf_protect
+from django.shortcuts import render_to_response
+from django.http import HttpResponseRedirect
+from django.template import RequestContext
 
 # Create your views here.
 # def projects(request):
@@ -74,4 +83,27 @@ def sign_up(request):
     return render(request, 'torch/sign_up.html')
 
 def start(request):
-    return render(request, 'torch/start.html')
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            # user = User.objects.create_user(
+            #     username=form.cleaned_data['username'],
+            #     password=form.cleaned_data['password1'],
+            #     email=form.cleaned_data['email']
+            # )
+            user = User(username=form.cleaned_data['username'], password=form.cleaned_data['password1'], email=form.cleaned_data['email'])
+            user.save()
+            return HttpResponseRedirect('/users/success/')
+    else:
+        form = RegistrationForm()
+    variables = RequestContext(request, {
+        'form': form
+    })
+
+    return render_to_response(
+        'torch/start.html',
+        variables,
+    )
+
+def settings(request):
+    return render(request, 'torch/settings.html')
