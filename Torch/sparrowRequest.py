@@ -16,4 +16,3 @@ with requests.Session() as s:
 
     page = s.get("http://125.141.219.95/projectInfo.spw?projectId=1")
     print(page.status_code)
-
