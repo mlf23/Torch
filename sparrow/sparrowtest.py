@@ -7,8 +7,7 @@ headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleW
 
 response = requests.get(url, headers=headers)
 print(response.cookies['JSESSIONID'])
-print(response.content)
-print(response.url[0])
+print(response.url)
 USERNAME = 'guest1'
 PASSWORD = 'guests'
 
@@ -48,31 +47,9 @@ response = requests.post('http://125.141.219.95/authenticate.spw', data = payloa
 
 print("----------Here is after login requests-----------")
 print(response.url)
-print(response.content)
 # print(response.content)
-
-response = requests.get('http://125.141.219.95/projectList.spw', headers = headers)
-print("----------Project Page!!!-----------")
-# print(response.url)
 # print(response.content)
-
-print("----current status-----")
-print(payload)
-# print("Username : " + USERNAME)
-# print("Password : " + PASSWORD)
-print("\n\n")
-
-
-
-
-
-print("Current Payload\n")
-print(payload)
-print("\n\n")
-
 # 아마 포스트로 jsessionid 넘겨야 한다.
-responese = requests.post('http://125.141.219.95/projectList.spw', data=payload, headers = headers)
-print(response.url)
 # print(response.cookies['JSESSIONID'])
 
 # USERNAME = 'nobody'
